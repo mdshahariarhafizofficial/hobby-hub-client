@@ -15,12 +15,20 @@ const Navbar = () => {
             <li><NavLink to='all-groups' 
             className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
             >All Groups</NavLink></li>
-            <li><NavLink to='create-group' 
-            className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
-            >Create Group</NavLink></li>
-            <li><NavLink to='my-groups' 
-            className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
-            >My Groups</NavLink></li>
+
+            {
+               user ? 
+               <>
+               <li><NavLink to='create-group' 
+               className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
+               >Create Group</NavLink></li>
+               <li><NavLink to='my-groups' 
+               className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
+               >My Groups</NavLink></li>
+               </>
+               : ''
+            }
+
     </>
     return (
         <nav>

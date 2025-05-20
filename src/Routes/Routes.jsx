@@ -3,6 +3,10 @@ import Home from "../Pages/Home";
 import Root from "../Layout/Root";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import AllGroups from "../Pages/AllGroups";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import CreateGroup from "../Pages/CreateGroup";
+import MyGroups from "../Pages/MyGroups";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +24,18 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 Component: Register
-            }
+            },{
+                path: 'all-groups',
+                Component: AllGroups,
+            },
+            {
+                path: 'create-group',
+                element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
+            },
+            {
+                path: 'my-groups',
+                element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>
+            },
         ]
     },
     {

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/HobbyHubLogo.png'
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../Context/AuthContext';
 const Footer = () => {
+        const {user} = useContext(AuthContext);
         const menu = <>
             <li><NavLink to='/' 
             className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold' : '' }
@@ -9,12 +11,17 @@ const Footer = () => {
             <li><NavLink to='all-groups' 
             className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
             >All Groups</NavLink></li>
-            <li><NavLink to='create-group' 
-            className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
-            >Create Group</NavLink></li>
-            <li><NavLink to='my-groups' 
-            className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
-            >My Groups</NavLink></li>
+            {
+                user? 
+                <>
+                    <li><NavLink to='create-group' 
+                    className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
+                    >Create Group</NavLink></li>
+                    <li><NavLink to='my-groups' 
+                    className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
+                    >My Groups</NavLink></li>
+                </>: ''
+            }
     </>
     return (
         <footer className="footer py-20 px-0 sm:footer-horizontal bg-base-100 border-t-2 border-gray-200 text-base-content p-10">

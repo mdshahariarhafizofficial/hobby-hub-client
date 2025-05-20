@@ -1,0 +1,128 @@
+import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import '../Slider/Slider.css';
+import slide1 from '../../assets/slide-1.jpg';
+import slide11 from '../../assets/slide-11.jpg';
+import slide2 from '../../assets/slide-2.jpg';
+import slide3 from '../../assets/slide-3.jpg';
+
+const Slider = () => {
+     const progressCircle = useRef(null);
+        const progressContent = useRef(null);
+        const onAutoplayTimeLeft = (s, time, progress) => {
+            progressCircle.current.style.setProperty('--progress', 1 - progress);
+            progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+        };
+    return (
+    <>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        className="mySwiper"
+      >
+
+        {/* Slide-1 */}
+        <SwiperSlide>
+        <div
+          className="flex items-center justify-center relative w-full h-full bg-cover object-cover bg-center"
+          style={{ backgroundImage: `url(${slide1})`}}
+        >
+            {/* Overlay */}
+          <div className="absolute inset-0 bg-[#000000] opacity-30"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-white p-10 space-y-4">
+            <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Learn, Share, and Grow Together</h2>
+            <p className='text-shadow-lg/80 text-shadow-black'>From book clubs to study circles — <br /> find your tribe and fuel your passions with HobbyHub.</p>
+        </div>
+
+        </div>
+        </SwiperSlide>
+
+        
+        {/* Slide-2 */}
+        <SwiperSlide>
+        <div
+          className="flex items-center justify-center relative w-full h-full bg-cover object-cover bg-center"
+          style={{ backgroundImage: `url(${slide2})`}}
+        >
+            {/* Overlay */}
+          <div className="absolute inset-0 bg-[#000000] opacity-30"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-white p-10 space-y-4">
+            <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Unleash Creativity Through Crafts</h2>
+            <p className='text-shadow-lg/80 text-shadow-black'>Join local hobby groups where kids can explore, create, <br /> and bond through fun hands-on activities.</p>
+        </div>
+
+        </div>
+        </SwiperSlide>
+
+        {/* Slide-3 */}
+        <SwiperSlide>
+        <div
+          className="flex items-center justify-center relative w-full h-full bg-cover object-cover bg-center"
+          style={{ backgroundImage: `url(${slide3})`}}
+        >
+            {/* Overlay */}
+          <div className="absolute inset-0 bg-[#000000] opacity-30"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-white p-10 space-y-4">
+            <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Build Connections, One Game at a Time</h2>
+            <p className='text-shadow-lg/80 text-shadow-black'>Discover board game lovers near you. Compete, <br /> collaborate, and make lasting friendships.</p>
+        </div>
+
+        </div>
+        </SwiperSlide>
+
+        {/* Slide-4 */}
+        <SwiperSlide>
+        <div
+          className="flex items-center justify-center relative w-full h-full bg-cover object-cover bg-center"
+          style={{ backgroundImage: `url(${slide11})`}}
+        >
+            {/* Overlay */}
+          <div className="absolute inset-0 bg-[#000000] opacity-30"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-white p-10 space-y-4">
+            <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Where Friendships Spark and Memories Glow</h2>
+            <p className='text-shadow-lg/80 text-shadow-black'>HobbyHub brings like-minded people together  <br />  for unforgettable group experiences.</p>
+        </div>
+
+        </div>
+        </SwiperSlide>
+
+
+        
+
+        <div className="autoplay-progress " slot="container-end">
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle stroke='#ff5722' cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span className='text-primary' ref={progressContent}></span>
+        </div>
+      </Swiper>
+    </>
+    );
+};
+
+export default Slider;

@@ -1,15 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
 
 const Register = () => {
+    const [errorMessage, setErrorMessage] = useState('');
+    // Handle Register
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log({name, photo, email, password});
+
+            // Password Validation
+            const lowercase = /(?=.*[a-z])/;
+            const uppercase = /(?=.*[A-Z])/;
+            const digit = /(?=.*\d)/;
+            const length = /.{6,}/;
+            if (!lowercase.test(password)) {
+                setErrorMessage("Must have a Lowercase letter in the password ");
+                return
+            }else if(!uppercase.test(password)){
+                setErrorMessage('Must have a Uppercase letter in the password ');
+                return
+            }else if(!digit.test(password)){
+                setErrorMessage("Must have a Digit in the password ");
+                return
+            }
+            else if(!length.test(password)){
+                setErrorMessage("Length must be at least 6 character");
+                return
+            }
+            else{
+                setErrorMessage('')
+            }
+
+            // Create User
+        
+    }
+
     return (
-        <div className='flex items-center justify-center min-h-[90vh] my-10'>
+        <div className='flex items-center justify-center min-h-[90vh] my-10 md:my-0'>
             <div className="w-full max-w-2xl p-8 space-y-3 rounded-xl dark:bg-gray-50 shadow-2xl dark:text-gray-800 border-5 border-primary" bis_skin_checked="1">
                 <h1 className="text-6xl text-primary font-bold text-center">Register Now!</h1>
 
                 {/* Form */}
-                <form noValidate="" action="" className="space-y-6">
+                <form onSubmit={handleRegister}
+                className="space-y-6">
                     {/* Name */}
                     <div className="space-y-1 text-sm" bis_skin_checked="1">
                         <label htmlFor="name" className="block dark:text-gray-600">Name</label>
@@ -29,8 +68,9 @@ const Register = () => {
                     <div className="space-y-1 text-sm" bis_skin_checked="1">
                         <label htmlFor="password" className="block dark:text-gray-700">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300" />
+                        <p className='text-sm text-red-600'>{errorMessage}</p>
                     </div>
-                    <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-primary text-2xl ">Register</button>
+                    <button type='submit' className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-primary text-2xl ">Register</button>
                 </form>
 
                 {/* Social */}

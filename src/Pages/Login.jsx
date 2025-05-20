@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-    const {loginUser, setUser} = useContext(AuthContext);
+    const {loginUser, setUser, singInWithGoogle} = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
     // Handle Register
     const handleLogin = (e) => {
@@ -43,6 +44,7 @@ const Login = () => {
             loginUser(email, password)
             .then( (result) => {
                 setUser(result.user)
+                navigate('/')
                 Swal.fire({
                 icon: "success",
                 title: "Login Successful!",
@@ -59,6 +61,31 @@ const Login = () => {
                 });
             })
         
+    }
+
+    // Handle Sing in with google 
+    const handleSingInWithGoogle = () => {
+        singInWithGoogle()
+             .then(result => {
+                setUser(result.user)
+                navigate('/')
+                    Swal.fire({
+                    icon: "success",
+                    title: "Sing in Successful!",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    });
+             })
+             .catch((error) => {
+                console.log(error);
+                
+                    Swal.fire({
+                    icon: "error",
+                    title: `${error.message}`,
+                    showConfirmButton: false,
+                    timer: 1500,
+                    });
+             })
     }
 
 
@@ -90,7 +117,7 @@ const Login = () => {
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-300" bis_skin_checked="1"></div>
                 </div>
                 <div className="flex justify-center space-x-4" bis_skin_checked="1">
-                    <button aria-label="Log in with Google" className="p-3 rounded-sm">
+                    <button onClick={handleSingInWithGoogle} aria-label="Log in with Google" className="p-3 rounded-sm">
                         <FcGoogle size={25}></FcGoogle>
                     </button>
                     <button aria-label="Log in with Twitter" className="p-3 rounded-sm">

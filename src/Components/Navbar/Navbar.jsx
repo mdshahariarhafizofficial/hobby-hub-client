@@ -56,7 +56,7 @@ const Navbar = () => {
                             <div className="tooltip tooltip-bottom" data-tip={user && user.displayName}>
                                 <div className="avatar">
                                 <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
-                                    <img className='cursor-pointer' src= {user ? user.photoURL : '' } />
+                                    <img className='cursor-pointer' src= {user ? user.photoURL : '' } referrerPolicy="no-referrer" />
                                 </div>
                                 </div>
                             </div>

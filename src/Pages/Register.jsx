@@ -5,7 +5,7 @@ import { AuthContext } from "../Context/AuthContext";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createUser, updateUserProfile, user } = useContext(AuthContext);
+  const { createUser, updateUserProfile, user, singInWithGoogle, setUser } = useContext(AuthContext);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   console.log(user);
@@ -70,6 +70,31 @@ const Register = () => {
                 });
       });
   };
+
+      // Handle Sing in with google 
+      const handleSingInWithGoogle = () => {
+          singInWithGoogle()
+               .then(result => {
+                  setUser(result.user)
+                  navigate('/')
+                      Swal.fire({
+                      icon: "success",
+                      title: "Sing in Successful!",
+                      showConfirmButton: false,
+                      timer: 1500,
+                      });
+               })
+               .catch((error) => {
+                  console.log(error);
+                  
+                      Swal.fire({
+                      icon: "error",
+                      title: `${error.message}`,
+                      showConfirmButton: false,
+                      timer: 1500,
+                      });
+               })
+      }
 
   return (
     <div className="flex items-center justify-center min-h-[90vh] my-10 md:my-0">
@@ -159,7 +184,7 @@ const Register = () => {
           ></div>
         </div>
         <div className="flex justify-center space-x-4" bis_skin_checked="1">
-          <button aria-label="Log in with Google" className="p-3 rounded-sm">
+          <button onClick={handleSingInWithGoogle} aria-label="Log in with Google" className="p-3 rounded-sm">
             <FcGoogle size={25}></FcGoogle>
           </button>
           <button aria-label="Log in with Twitter" className="p-3 rounded-sm">

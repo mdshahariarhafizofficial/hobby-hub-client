@@ -1,13 +1,74 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    const {loginUser, setUser} = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState('');
+
+    // Handle Register
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log({email, password});
+
+            // Password Validation
+            const lowercase = /(?=.*[a-z])/;
+            const uppercase = /(?=.*[A-Z])/;
+            const digit = /(?=.*\d)/;
+            const length = /.{6,}/;
+            if (!lowercase.test(password)) {
+                setErrorMessage("Must have a Lowercase letter in the password ");
+                return
+            }else if(!uppercase.test(password)){
+                setErrorMessage('Must have a Uppercase letter in the password ');
+                return
+            }else if(!digit.test(password)){
+                setErrorMessage("Must have a Digit in the password ");
+                return
+            }
+            else if(!length.test(password)){
+                setErrorMessage("Length must be at least 6 character");
+                return
+            }
+            else{
+                setErrorMessage('')
+            }
+
+            // Login User
+            loginUser(email, password)
+            .then( (result) => {
+                setUser(result.user)
+                Swal.fire({
+                icon: "success",
+                title: "Login Successful!",
+                showConfirmButton: false,
+                timer: 1500
+                });
+            })
+            .catch((error)=>{
+                Swal.fire({
+                icon: "error",
+                title: `${error.message}`,
+                showConfirmButton: false,
+                timer: 1500
+                });
+            })
+        
+    }
+
+
     return (
         <div className='flex items-center justify-center min-h-[80vh] my-10 md:my-0'>
             <div className="w-full max-w-xl p-8 space-y-3 rounded-xl dark:bg-gray-50 shadow-2xl dark:text-gray-800 border-5 border-primary" bis_skin_checked="1">
                 <h1 className="text-6xl text-primary font-bold text-center">Login</h1>
-                <form noValidate="" action="" className="space-y-6">
+                {/* form */}
+                <form onSubmit={handleLogin}
+                className="space-y-6">
                     <div className="space-y-1 text-sm" bis_skin_checked="1">
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
                         <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300" />
@@ -15,11 +76,13 @@ const Login = () => {
                     <div className="space-y-1 text-sm" bis_skin_checked="1">
                         <label htmlFor="password" className="block dark:text-gray-700">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300" />
-                        <div className="flex justify-end text-xs dark:text-gray-600" bis_skin_checked="1">
+                        <div className="flex justify-between text-xs dark:text-gray-600" bis_skin_checked="1">
+                            <p className='text-red-600'>{errorMessage}</p>
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
+                        
                     </div>
-                    <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-primary text-2xl ">Log in</button>
+                    <button type='submit' className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-primary text-2xl ">Log in</button>
                 </form>
                 <div className="flex items-center pt-4 space-x-1" bis_skin_checked="1">
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-300" bis_skin_checked="1"></div>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import Swal from 'sweetalert2';
 
@@ -8,6 +8,7 @@ const Login = () => {
     const {loginUser, setUser, singInWithGoogle} = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
 
     // Handle Register
     const handleLogin = (e) => {
@@ -44,7 +45,7 @@ const Login = () => {
             loginUser(email, password)
             .then( (result) => {
                 setUser(result.user)
-                navigate('/')
+                navigate(`${location.state ? location.state : '/'}`)
                 Swal.fire({
                 icon: "success",
                 title: "Login Successful!",
@@ -68,7 +69,7 @@ const Login = () => {
         singInWithGoogle()
              .then(result => {
                 setUser(result.user)
-                navigate('/')
+                    navigate(`${location.state ? location.state : '/'}`)
                     Swal.fire({
                     icon: "success",
                     title: "Sing in Successful!",

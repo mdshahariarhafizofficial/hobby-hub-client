@@ -12,9 +12,11 @@ import { signOut, signInWithEmailAndPassword } from "firebase/auth";
 import Swal from "sweetalert2";
 
 const AuthProvider = ({ children }) => {
+  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   // Create User
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -22,6 +24,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false)
     });
     return () => {
       unsubscribe();
@@ -36,11 +39,13 @@ const AuthProvider = ({ children }) => {
 //   Sing In with google
   const googleProvider = new GoogleAuthProvider();
   const singInWithGoogle = () => {
+    setLoading(true)
     return  signInWithPopup(auth, googleProvider)
   }
 
   // Sing in user
   const loginUser = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -67,6 +72,8 @@ const AuthProvider = ({ children }) => {
     handleSingOut,
     setUser,
     singInWithGoogle,
+    loading, 
+    setLoading,
   };
 
   return <AuthContext value={userInfo}>{children}</AuthContext>;

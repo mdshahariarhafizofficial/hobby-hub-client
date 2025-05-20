@@ -1,9 +1,11 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Navbar from '../Components/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
+import Loader from '../Pages/Loader';
 
 const Root = () => {
+    const {state} = useNavigation(); 
     return (
         <>
             <header>
@@ -13,7 +15,10 @@ const Root = () => {
             </header>
             <main>
                 <div className='max-w-[1280px] min-h-[calc(100vh-390.61px)] mx-auto px-5 lg:px-0'>
-                    <Outlet></Outlet>
+                    {
+                        state == 'loading'? <Loader></Loader>
+                        :<Outlet></Outlet>
+                    }
                 </div>
             </main>
             <footer>

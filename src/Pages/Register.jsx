@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { createUser, updateUserProfile, user, singInWithGoogle, setUser } = useContext(AuthContext);
@@ -63,12 +64,7 @@ const Register = () => {
           .catch(() => {});
       })
       .catch((error) => {
-                Swal.fire({
-                icon: "error",
-                title: `${error.message}`,
-                showConfirmButton: false,
-                timer: 1500
-                });
+        toast.error(error.message)
       });
   };
 

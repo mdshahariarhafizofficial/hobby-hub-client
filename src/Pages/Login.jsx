@@ -3,6 +3,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const {loginUser, setUser, singInWithGoogle} = useContext(AuthContext);
@@ -54,12 +55,7 @@ const Login = () => {
                 });
             })
             .catch((error)=>{
-                Swal.fire({
-                icon: "error",
-                title: `${error.message}`,
-                showConfirmButton: false,
-                timer: 1500
-                });
+                toast.error(error.message)
             })
         
     }
@@ -80,12 +76,7 @@ const Login = () => {
              .catch((error) => {
                 console.log(error);
                 
-                    Swal.fire({
-                    icon: "error",
-                    title: `${error.message}`,
-                    showConfirmButton: false,
-                    timer: 1500,
-                    });
+                toast.error(error.message)
              })
     }
 

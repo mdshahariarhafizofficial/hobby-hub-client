@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
 
 const Register = () => {
+    const {createUser, updateUserProfile, user} = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState('');
+    console.log(user);
+    
     // Handle Register
     const handleRegister = (e) => {
         e.preventDefault();
@@ -12,6 +16,10 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        const updateUserInfo = {
+            displayName: name,
+            photoURL: photo,
+        }
         console.log({name, photo, email, password});
 
             // Password Validation
@@ -38,6 +46,20 @@ const Register = () => {
             }
 
             // Create User
+            createUser(email, password)
+            .then((result) => {
+                console.log(result);
+                // Update user Profile
+                updateUserProfile(updateUserInfo)
+                .then(()=>{})
+                .catch(() => {})
+
+            }).then((error) => {
+                console.log(error);
+                
+            })
+
+
         
     }
 

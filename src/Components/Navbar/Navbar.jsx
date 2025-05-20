@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from '../../assets/HobbyHubLogo.png'
+import { AuthContext } from '../../Context/AuthContext';
 
 const Navbar = () => {
+    const {user, handleSingOut} = useContext(AuthContext);
+    console.log(user);
+
+    
     const menu = <>
             <li><NavLink to='/' 
             className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold' : '' }
@@ -43,13 +48,33 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-4">
-                    <Link to='login'>
-                        <button className="btn btn-primary text-white text-xl font-medium px-6 tracking-wider">Login</button>
-                    </Link>
-                        <span className='font-bold hidden md:block'>Or</span>
-                    <Link to='register' className='hidden md:block'>
-                        <button className="btn btn-outline border-primary border-2 text-xl font-medium tracking-wider">Register</button>
-                    </Link>
+                    {
+                        user? 
+                        <div className='flex items-center gap-4'>
+                            <h2>{user?.email}</h2>
+
+                            <div className="tooltip tooltip-bottom" data-tip={user && user.displayName}>
+                                <div className="avatar">
+                                <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
+                                    <img className='cursor-pointer' src= {user ? user.photoURL : '' } />
+                                </div>
+                                </div>
+                            </div>
+
+                            <button onClick={()=>handleSingOut()} className="btn btn-primary text-white text-xl font-medium px-6 tracking-wider">Log Out</button>
+                        </div>
+                        :
+                        <div className='flex items-center gap-4'>
+                            <Link to='login'>
+                                <button className="btn btn-primary text-white text-xl font-medium px-6 tracking-wider">Login</button>
+                            </Link>
+                                <span className='font-bold hidden md:block'>Or</span>
+                            <Link to='register' className='hidden md:block'>
+                                <button className="btn btn-outline border-primary border-2 text-xl font-medium tracking-wider">Register</button>
+                            </Link>
+                        </div>
+                    }
+
                 </div>
             </div>
         </nav>

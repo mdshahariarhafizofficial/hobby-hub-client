@@ -12,6 +12,7 @@ import slide1 from '../../assets/slide-1.jpg';
 import slide11 from '../../assets/slide-11.jpg';
 import slide2 from '../../assets/slide-2.jpg';
 import slide3 from '../../assets/slide-3.jpg';
+import { Link } from 'react-router';
 
 const Slider = () => {
      const progressCircle = useRef(null);
@@ -51,6 +52,9 @@ const Slider = () => {
         <div className="relative z-10 text-white p-10 space-y-4">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Learn, Share, and Grow Together</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>From book clubs to study circles — <br /> find your tribe and fuel your passions with HobbyHub.</p>
+            <Link to='/all-groups'>
+              <button className="btn btn-primary tracking-wider text-xl">Explore Groups</button>
+            </Link>
         </div>
 
         </div>
@@ -70,6 +74,9 @@ const Slider = () => {
         <div className="relative z-10 text-white p-10 space-y-4">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Unleash Creativity Through Crafts</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>Join local hobby groups where kids can explore, create, <br /> and bond through fun hands-on activities.</p>
+            <Link to='/create-group'>
+              <button className="btn btn-primary tracking-wider text-xl">Create a Group</button>
+            </Link>
         </div>
 
         </div>
@@ -88,6 +95,9 @@ const Slider = () => {
         <div className="relative z-10 text-white p-10 space-y-4">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Build Connections, One Game at a Time</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>Discover board game lovers near you. Compete, <br /> collaborate, and make lasting friendships.</p>
+            <Link to=''>
+              <button className="btn btn-primary tracking-wider text-xl">Featured Groups</button>
+            </Link>
         </div>
 
         </div>
@@ -106,6 +116,9 @@ const Slider = () => {
         <div className="relative z-10 text-white p-10 space-y-4">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Where Friendships Spark and Memories Glow</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>HobbyHub brings like-minded people together  <br />  for unforgettable group experiences.</p>
+            <Link to='/my-groups'>
+              <button className="btn btn-primary tracking-wider text-xl">Your Groups</button>
+            </Link>
         </div>
 
         </div>

@@ -38,7 +38,7 @@ const MyGroups = () => {
                     setMyGroups(remainingData)
                     Swal.fire({
                     title: "Deleted!",
-                    text: "Your file has been deleted.",
+                    text: "Your Group has been deleted.",
                     icon: "success"
                     });  
                 }

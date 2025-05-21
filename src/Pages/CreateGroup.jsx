@@ -61,16 +61,18 @@ const CreateGroup = () => {
                                     <input 
                                     type="text"
                                     name='group-name' 
-                                    className="input w-full" placeholder="Group Name" />
+                                    className="input w-full" 
+                                    placeholder="Group Name"
+                                    required />
                                     {/* ------------ */}
 
                                     
                                     {/* Hobby Category Name */}
                                     <label className="label text-secondary font-bold">Hobby Category</label>
 
-                                    <select name='category' className='border border-gray-300 py-3 px-2 text-primary font-bold rounded'>
+                                    <select name='category' className='border border-gray-300 py-3 px-2 text-primary font-bold rounded' required>
 
-                                        <option value="select">
+                                        <option value="">
                                             Select a Category
                                         </option>
 
@@ -103,7 +105,9 @@ const CreateGroup = () => {
                                     <input 
                                     type="text"
                                     name='meeting-location' 
-                                    className="input w-full" placeholder="Meeting Location" />
+                                    className="input w-full" 
+                                    placeholder="Meeting Location"
+                                    required />
                                     {/* ------------ */}
 
                                     {/* Max Members */}
@@ -111,7 +115,9 @@ const CreateGroup = () => {
                                     <input 
                                     type="number"
                                     name='max-members' 
-                                    className="input w-full" placeholder="Max Members" />
+                                    className="input w-full" 
+                                    placeholder="Max Members"
+                                    required />
                                     {/* ------------ */}
 
                                     {/* Start Date */}
@@ -119,7 +125,9 @@ const CreateGroup = () => {
                                     <input 
                                     type="date"
                                     name='date' 
-                                    className="input w-full" placeholder="Start Date" />
+                                    className="input w-full" 
+                                    placeholder="Start Date"
+                                    required />
                                     {/* ------------ */}
 
                                     {/* Image URL */}
@@ -127,7 +135,9 @@ const CreateGroup = () => {
                                     <input 
                                     type="url"
                                     name='image-url' 
-                                    className="input w-full" placeholder="Image URL" />
+                                    className="input w-full" 
+                                    placeholder="Image URL"
+                                    required />
                                     {/* ------------ */}
 
                                     {/* User Name */}
@@ -155,11 +165,12 @@ const CreateGroup = () => {
                                     placeholder={`${user? user.email: "User Email"}`} />
                                     {/* ------------ */}
 
-                                                                                                {/* Description */}
+                                    {/* Description */}
                                     <label className="label text-secondary font-bold">Description</label>
                                     <textarea 
                                     placeholder="Description"
                                     name='description'
+                                    required
                                     className="textarea textarea-lg w-full"></textarea>
                                     {/* ------------ */}
                                     

@@ -7,6 +7,7 @@ import AllGroups from "../Pages/AllGroups";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import CreateGroup from "../Pages/CreateGroup";
 import MyGroups from "../Pages/MyGroups";
+import Loader from "../Pages/Loader";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +27,9 @@ const router = createBrowserRouter([
                 Component: Register
             },{
                 path: 'all-groups',
+                loader: () => fetch('http://localhost:8000/groups'),
                 Component: AllGroups,
+                hydrateFallbackElement: <Loader></Loader>
             },
             {
                 path: 'create-group',

@@ -33,7 +33,8 @@ const CreateGroup = () => {
                 timer: 1500
                 });
             }
-        }) 
+        })
+        form.reset(); 
     } 
 
 
@@ -78,7 +79,7 @@ const CreateGroup = () => {
                                             <label className="label text-secondary font-bold">User Name</label>
                                             <input 
                                             type="text"
-                                            name='user-name' 
+                                            name='userName' 
                                             className="input w-full"
                                             value={`${user ? user.displayName : ''}`}
                                             onChange={e=>e.target}
@@ -108,7 +109,7 @@ const CreateGroup = () => {
                                             <label className="label text-secondary font-bold">Group Name</label>
                                             <input 
                                             type="text"
-                                            name='group-name' 
+                                            name='groupName' 
                                             className="input w-full" 
                                             placeholder="Group Name"
                                             required />
@@ -168,7 +169,7 @@ const CreateGroup = () => {
                                             <label className="label text-secondary font-bold">Max Members</label>
                                             <input 
                                             type="number"
-                                            name='max-members' 
+                                            name='maxMembers' 
                                             className="input w-full" 
                                             placeholder="Max Members"
                                             required />
@@ -181,7 +182,7 @@ const CreateGroup = () => {
                                     <label className="label text-secondary font-bold">Meeting Location</label>
                                     <input 
                                     type="text"
-                                    name='meeting-location' 
+                                    name='meetingLocation' 
                                     className="input w-full" 
                                     placeholder="Meeting Location"
                                     required />
@@ -191,7 +192,7 @@ const CreateGroup = () => {
                                     <label className="label text-secondary font-bold">Image URL</label>
                                     <input 
                                     type="url"
-                                    name='image-url' 
+                                    name='imageUrl' 
                                     className="input w-full" 
                                     placeholder="Image URL"
                                     required />

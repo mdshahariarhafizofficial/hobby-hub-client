@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import GroupCard from '../Components/GroupCard/GroupCard';
 import { FaEdit, FaInfoCircle } from 'react-icons/fa';
@@ -74,7 +74,7 @@ const MyGroups = () => {
                     {/* row  */}
                     {
                         myGroups.map( (group, index) => 
-                    <tr key={group._id}>
+                    <tr key={group._id} className='border-secondary'>
                         <th>{index+1}</th>
                         <td className='text-md font-bold text-primary'>{group.groupName}</td>
                         <td className='text-secondary font-medium'>{group.category}</td>
@@ -83,9 +83,11 @@ const MyGroups = () => {
                         <td>{
                             <div>
                                 <div className="join flex justify-center gap-7">
-                                    <button className="join-item">
-                                        <FaInfoCircle size={22} color='#ff5722'></FaInfoCircle>
-                                    </button>
+                                    <Link to={`/group/${group._id}`}>
+                                        <button className="join-item">
+                                            <FaInfoCircle size={22} color='#ff5722'></FaInfoCircle>
+                                        </button>
+                                    </Link>
                                     <button className=" join-item">
                                         <FaEdit 
                                         size={22} color='#1e0a3c'></FaEdit>

@@ -8,6 +8,7 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import CreateGroup from "../Pages/CreateGroup";
 import MyGroups from "../Pages/MyGroups";
 import Loader from "../Pages/Loader";
+import GroupDetails from "../Pages/GroupDetails";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,12 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>,
                 hydrateFallbackElement: <Loader></Loader>
             },
+            {
+                path: '/group/:id',
+                loader: ({params}) => fetch(`http://localhost:8000/groups/${params.id}`),
+                element: <PrivateRoute><GroupDetails></GroupDetails></PrivateRoute>,
+                hydrateFallbackElement: <Loader></Loader>
+            }
         ]
     },
     {

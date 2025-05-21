@@ -9,7 +9,7 @@ const AllGroups = () => {
     return (
         <div>
             <div className='my-10'>
-                <h2 className='text-5xl font-bold text-center'>All Groups</h2>
+                <h2 className='text-5xl font-bold text-center text-secondary'>All Groups</h2>
                 <div className="divider divider-primary w-52 mx-auto"></div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-40'>

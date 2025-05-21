@@ -37,7 +37,9 @@ const router = createBrowserRouter([
             },
             {
                 path: 'my-groups',
-                element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>
+                loader: () => fetch('http://localhost:8000/groups'),
+                element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>,
+                hydrateFallbackElement: <Loader></Loader>
             },
         ]
     },

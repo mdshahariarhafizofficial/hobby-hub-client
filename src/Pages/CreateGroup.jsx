@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { MdGroupAdd } from 'react-icons/md';
 import { TiArrowForward } from 'react-icons/ti';
 import { AuthContext } from '../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const CreateGroup = () => {
     const {user} = useContext(AuthContext);
@@ -13,7 +14,26 @@ const CreateGroup = () => {
         const formData = new FormData(form);
         const newGroup = Object.fromEntries(formData.entries());
         console.log(newGroup);
-        
+
+        // send data to DB
+        fetch('http://localhost:8000/groups', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newGroup)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.insertedId) {
+                Swal.fire({
+                icon: "success",
+                title: "Group Created Successfully!",
+                showConfirmButton: false,
+                timer: 1500
+                });
+            }
+        }) 
     } 
 
 

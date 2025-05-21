@@ -4,6 +4,7 @@ import { AuthContext } from '../Context/AuthContext';
 import GroupCard from '../Components/GroupCard/GroupCard';
 import { FaEdit, FaInfoCircle } from 'react-icons/fa';
 import { MdDeleteForever } from 'react-icons/md';
+import Swal from 'sweetalert2';
 
 const MyGroups = () => {
     const {user} = useContext(AuthContext);
@@ -15,7 +16,38 @@ const MyGroups = () => {
         setMyGroups(remainingGroups)
     },[data, user.email])
 
-    console.log(data);
+    // Delete
+    const handleDelete = (id) => {
+        Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`http://localhost:8000/groups/${id}`,{
+                method: "DELETE",
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    const remainingData = myGroups.filter(group => group._id !== id);
+                    setMyGroups(remainingData)
+                    Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                    });  
+                }
+            })
+
+        }
+        });
+        
+    }
     
     return (
         <div>
@@ -28,7 +60,7 @@ const MyGroups = () => {
                 <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
                 <table className="table text-center">
                     {/* head */}
-                    <thead>
+                    <thead className='bg-secondary text-white'>
                     <tr>
                         <th>No.</th>
                         <th>Group Name</th>
@@ -58,7 +90,7 @@ const MyGroups = () => {
                                         <FaEdit 
                                         size={22} color='#1e0a3c'></FaEdit>
                                     </button>
-                                    <button className=" join-item">
+                                    <button onClick={()=>handleDelete(group._id)} className=" join-item">
                                         <MdDeleteForever
                                         size={25} color='red'
                                         ></MdDeleteForever>

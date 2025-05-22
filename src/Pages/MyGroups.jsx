@@ -78,8 +78,8 @@ const MyGroups = () => {
         .then(res => res.json())
         .then(data => {
             if (data.modifiedCount) {
+                document.getElementById('my_modal_5').close();
                 Swal.fire({
-                position: "top-end",
                 icon: "success",
                 title: "Updated data has been saved",
                 showConfirmButton: false,

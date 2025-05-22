@@ -9,6 +9,7 @@ import CreateGroup from "../Pages/CreateGroup";
 import MyGroups from "../Pages/MyGroups";
 import Loader from "../Pages/Loader";
 import GroupDetails from "../Pages/GroupDetails";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/*',
-        element: <p>404 Page</p>
+        Component: ErrorPage,
     }
 
 ])

@@ -4,6 +4,7 @@ import { MdDateRange, MdOutlineKeyboardDoubleArrowRight } from 'react-icons/md';
 import { Link } from 'react-router';
 import { format } from 'date-fns';
 import { IoTime } from "react-icons/io5";
+import { FiMonitor } from "react-icons/fi";
 
 const GroupCard = ({group}) => {
     const {_id, meetingLocation, groupName, category, imageUrl, date} = group;
@@ -38,8 +39,12 @@ const GroupCard = ({group}) => {
                     // <h4 className='bg-green-500 text-secondary w-20 text-center font-bold text-sm rounded flex items-center justify-center'>Upcoming</h4>
                     }
                 </div>
-                <p className='flex items-center gap-2 text-gray-500 font-medium'> 
-                <FaMapLocationDot size={25} color='#FF5722'></FaMapLocationDot>
+                <p className='flex items-center gap-2 text-gray-500 font-medium'>
+                    {
+                        category == "video-gaming" ?
+                         <FiMonitor size={25} color='#FF5722' />:
+                        <FaMapLocationDot size={25} color='#FF5722'></FaMapLocationDot>
+                    } 
                 {meetingLocation}</p>
 
                 <div className="card-actions mt-auto">

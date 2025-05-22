@@ -16,7 +16,7 @@ const CreateGroup = () => {
         console.log(newGroup);
 
         // send data to DB
-        fetch('http://localhost:8000/groups', {
+        fetch('https://hobby-hub-server-beta.vercel.app/groups', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

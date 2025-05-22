@@ -31,7 +31,7 @@ const MyGroups = () => {
         confirmButtonText: "Yes, delete it!"
         }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:8000/groups/${id}`,{
+            fetch(`https://hobby-hub-server-beta.vercel.app/groups/${id}`,{
                 method: "DELETE",
             })
             .then(res => res.json())
@@ -68,7 +68,7 @@ const MyGroups = () => {
         // console.log(updateData);
         
         // Send Data to Db
-        fetch(`http://localhost:8000/groups/${singleGroup._id}`,{
+        fetch(`https://hobby-hub-server-beta.vercel.app/groups/${singleGroup._id}`,{
             method: "PUT",
             headers: {
                 "content-type": "application/json"

@@ -18,7 +18,9 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: Home
+                loader: () => fetch('http://localhost:8000/groups'),
+                Component: Home,
+                hydrateFallbackElement: <Loader></Loader>
             },
             {
                 path: 'login',

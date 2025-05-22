@@ -95,9 +95,9 @@ const Slider = () => {
         <div className="relative z-10 text-white p-10 space-y-4">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Build Connections, One Game at a Time</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>Discover board game lovers near you. Compete, <br /> collaborate, and make lasting friendships.</p>
-            <Link to=''>
+            <a href='#featured-groups'>
               <button className="btn btn-primary tracking-wider text-xl">Featured Groups</button>
-            </Link>
+            </a>
         </div>
 
         </div>

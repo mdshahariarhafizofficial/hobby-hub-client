@@ -12,7 +12,6 @@ const GroupCard = ({group}) => {
 
 
     const isExpired = new Date(date) < new Date();
-    console.log(isExpired);
     
     
     

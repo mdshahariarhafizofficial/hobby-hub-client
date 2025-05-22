@@ -9,7 +9,9 @@
   --color-primary: #ff5722;
   --color-secondary: #1e0a3c;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 *{
   font-family: "Raleway", sans-serif;
 }

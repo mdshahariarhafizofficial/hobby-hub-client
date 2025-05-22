@@ -15,7 +15,7 @@ const FeaturedCard = ({group}) => {
 
     return (
         <div className=''>
-            <div className="card md:h-[200px] grid grid-cols-12 ">
+            <div className="card md:h-[200px] grid grid-cols-12 shadow-sm bg-base-100">
             <figure className='col-span-12 md:col-span-6 lg:col-span-6 relative md:h-[150px] lg:h-auto'>
                 <img
                 className='w-full h-full rounded-lg'

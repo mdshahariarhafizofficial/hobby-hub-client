@@ -65,8 +65,28 @@ const MyGroups = () => {
         const form = e.target;
         const formData = new FormData(form);
         const updateData = Object.fromEntries(formData.entries());
-        console.log(updateData);
+        // console.log(updateData);
         
+        // Send Data to Db
+        fetch(`http://localhost:8000/groups/${singleGroup._id}`,{
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(updateData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.modifiedCount) {
+                Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Updated data has been saved",
+                showConfirmButton: false,
+                timer: 1500
+                });
+            }
+        })
     }
     
     

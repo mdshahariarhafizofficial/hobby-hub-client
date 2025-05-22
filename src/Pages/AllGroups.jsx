@@ -14,7 +14,8 @@ const AllGroups = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-40'>
                 {
-                    data.map(group => 
+                    data.sort((a,b)=> new Date(a.date) - new Date(b.date) )
+                    .map(group => 
                     <GroupCard
                         key={group._id}
                         group={group}

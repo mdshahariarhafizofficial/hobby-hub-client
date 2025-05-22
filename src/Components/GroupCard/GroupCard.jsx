@@ -2,10 +2,18 @@ import React from 'react';
 import { FaMapLocationDot } from 'react-icons/fa6';
 import { MdDateRange, MdOutlineKeyboardDoubleArrowRight } from 'react-icons/md';
 import { Link } from 'react-router';
+import { format } from 'date-fns';
+import { IoTime } from "react-icons/io5";
 
 const GroupCard = ({group}) => {
     const {_id, meetingLocation, groupName, category, imageUrl, date} = group;
-    console.log(group);
+    const formattedDate = format(new Date(date), 'EEE, MMM d, yyyy');
+
+
+    const isExpired = new Date(date) < new Date();
+    console.log(isExpired);
+    
+    
     
     return (
         <div className=''>
@@ -14,13 +22,22 @@ const GroupCard = ({group}) => {
                 <img
                 className='w-full h-full rounded-lg'
                 src={imageUrl} />
-                <div className='absolute bg-primary text-white font-semibold px-3 rounded top-1 right-1'>{category}</div>
+                <div className='absolute bg-primary text-white font-semibold px-3 rounded top-1 right-1 capitalize'>{category}</div>
             </figure>
             <div className="card-body grow-1 p-4">
                 <h2 className="card-title text-secondary text-2xl">{groupName}</h2>
-                <p className='flex items-center gap-2 text-gray-500 font-bold'> 
-                <MdDateRange size={25} color='#FF5722'></MdDateRange>
-                {date}</p>
+                <div className='flex'>
+                    <p className='flex items-center gap-2 text-secondary font-bold'> 
+                    <MdDateRange size={25} color='#FF5722'></MdDateRange>
+                    {formattedDate}</p>
+                    {
+                        isExpired? 
+                    <h4 className='bg-red-500 text-white w-20 text-center font-bold rounded flex items-center justify-center gap-1'>
+                        <IoTime></IoTime>
+                        Expired</h4>: ''
+                    // <h4 className='bg-green-500 text-secondary w-20 text-center font-bold text-sm rounded flex items-center justify-center'>Upcoming</h4>
+                    }
+                </div>
                 <p className='flex items-center gap-2 text-gray-500 font-medium'> 
                 <FaMapLocationDot size={25} color='#FF5722'></FaMapLocationDot>
                 {meetingLocation}</p>

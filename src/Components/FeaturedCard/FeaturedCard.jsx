@@ -46,7 +46,7 @@ const FeaturedCard = ({group}) => {
 
                 <div className="card-actions mt-auto">
                     <Link to={`/group/${_id}`}>
-                        <button className="btn btn-primary text-black">See More 
+                        <button onClick={()=>window.scrollTo(0,1)} className="btn btn-primary text-black">See More 
                             <MdOutlineKeyboardDoubleArrowRight size={20} />
                         </button>
                     </Link>

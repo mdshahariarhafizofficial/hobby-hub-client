@@ -44,7 +44,7 @@ const GroupDetails = () => {
                     {
                         isExpired?
                         <div>
-                            <button onClick={()=>setJoin(!join)} className='bg-red-500 text-white btn text-xl'>
+                            <button style={{cursor: 'not-allowed'}} className='bg-red-500 text-white btn text-xl'>
                             <FaClock></FaClock>
                             Date is Expired</button>
                             <p className='text-red-500 font-medium flex items-center gap-1'> 
@@ -57,7 +57,7 @@ const GroupDetails = () => {
                                 <button className='bg-green-500 text-white btn text-xl'>
                                 <FaUserCheck></FaUserCheck>
                                 Joined</button>:
-                                <button onClick={()=>setJoin(!join)} className='bg-primary text-white btn text-xl'>
+                                <button onClick={()=>setJoin(true)} className='bg-primary text-white btn text-xl'>
                                 <MdGroupAdd />
                                 Join Group</button>
                             }

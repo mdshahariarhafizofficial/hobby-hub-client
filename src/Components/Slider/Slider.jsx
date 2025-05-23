@@ -1,6 +1,7 @@
 // import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Typewriter } from 'react-simple-typewriter'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -49,9 +50,27 @@ const Slider = () => {
           <div className="absolute inset-0 bg-[#000000] opacity-30"></div>
 
         {/* Content */}
-        <div className="relative z-10 text-white p-10 space-y-4">
+        <div className="relative z-10 text-white p-10 space-y-5">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Learn, Share, and Grow Together</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>From book clubs to study circles — <br /> find your tribe and fuel your passions with HobbyHub.</p>
+
+            {/* Type Writer */}
+            <div>
+              <h2 className='text-4xl md:text-4xl text-shadow-lg/80 text-shadow-black font-bold'>Find your hobby in → 
+              </h2>
+                <h4 className='text-xl md:text-2xl text-shadow-lg/80 text-shadow-black font-bold text-[#ff5722]'>
+                 <Typewriter 
+                    words={['Drawing', 'Cooking', 'Gaming', 'Photography', 'Running']}
+                    loop={true}
+                    cursor
+                    cursorStyle='|'
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                 />
+                </h4>              
+            </div>
+
             <Link to='/all-groups'>
               <button className="btn btn-primary tracking-wider text-xl">Explore Groups</button>
             </Link>
@@ -74,6 +93,24 @@ const Slider = () => {
         <div className="relative z-10 text-white p-10 space-y-4">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Unleash Creativity Through Crafts</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>Join local hobby groups where kids can explore, create, <br /> and bond through fun hands-on activities.</p>
+
+            {/* Type Writer */}
+            <div>
+              <h2 className='text-4xl md:text-4xl text-shadow-lg/80 text-shadow-black font-bold'>Find your hobby in → 
+              </h2>
+                <h4 className='text-xl md:text-2xl text-shadow-lg/80 text-shadow-black font-bold text-[#ff5722]'>
+                 <Typewriter 
+                    words={['Drawing', 'Cooking', 'Gaming', 'Photography', 'Running']}
+                    loop={true}
+                    cursor
+                    cursorStyle='|'
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                 />
+                </h4>              
+            </div>
+
             <Link to='/create-group'>
               <button className="btn btn-primary tracking-wider text-xl">Create a Group</button>
             </Link>
@@ -95,6 +132,24 @@ const Slider = () => {
         <div className="relative z-10 text-white p-10 space-y-4">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Build Connections, One Game at a Time</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>Discover board game lovers near you. Compete, <br /> collaborate, and make lasting friendships.</p>
+
+            {/* Type Writer */}
+            <div>
+              <h2 className='text-4xl md:text-4xl text-shadow-lg/80 text-shadow-black font-bold'>Find your hobby in → 
+              </h2>
+                <h4 className='text-xl md:text-2xl text-shadow-lg/80 text-shadow-black font-bold text-[#ff5722]'>
+                 <Typewriter 
+                    words={['Drawing', 'Cooking', 'Gaming', 'Photography', 'Running']}
+                    loop={true}
+                    cursor
+                    cursorStyle='|'
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                 />
+                </h4>              
+            </div>
+
             <a href='#featured-groups'>
               <button className="btn btn-primary tracking-wider text-xl">Featured Groups</button>
             </a>
@@ -116,6 +171,24 @@ const Slider = () => {
         <div className="relative z-10 text-white p-10 space-y-4">
             <h2 className="text-4xl md:text-6xl text-shadow-lg/80 text-shadow-black font-bold">Where Friendships Spark and Memories Glow</h2>
             <p className='text-shadow-lg/80 text-shadow-black'>HobbyHub brings like-minded people together  <br />  for unforgettable group experiences.</p>
+
+            {/* Type Writer */}
+            <div>
+              <h2 className='text-4xl md:text-4xl text-shadow-lg/80 text-shadow-black font-bold'>Find your hobby in → 
+              </h2>
+                <h4 className='text-xl md:text-2xl text-shadow-lg/80 text-shadow-black font-bold text-[#ff5722]'>
+                 <Typewriter 
+                    words={['Drawing', 'Cooking', 'Gaming', 'Photography', 'Running']}
+                    loop={true}
+                    cursor
+                    cursorStyle='|'
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                 />
+                </h4>              
+            </div>
+
             <Link to='/my-groups'>
               <button className="btn btn-primary tracking-wider text-xl">Your Groups</button>
             </Link>

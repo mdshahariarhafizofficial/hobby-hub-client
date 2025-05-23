@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from '../../assets/HobbyHubLogo.png'
 import { AuthContext } from '../../Context/AuthContext';
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
     const {user, handleSingOut} = useContext(AuthContext);
@@ -56,14 +58,20 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-4">
+                    <Tooltip id='my-tooltip'></Tooltip>
                     {
                         user? 
                         <div className='flex items-center gap-4'>
-
-                            <div className="tooltip tooltip-bottom" data-tip={user && user.displayName}>
+                            
+                            <div
+                            data-tooltip-id="my-tooltip"
+                            data-tooltip-content={`${user&& user.displayName }`}
+                            data-tooltip-place="bottom"
+                            >
                                 <div className="avatar">
                                 <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
-                                    <img className='cursor-pointer' src= {user ? user.photoURL : '' } referrerPolicy="no-referrer" />
+                                    <img 
+                                    className='cursor-pointer' src= {user ? user.photoURL : '' } referrerPolicy="no-referrer" />
                                 </div>
                                 </div>
                             </div>

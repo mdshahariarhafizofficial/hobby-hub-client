@@ -48,6 +48,7 @@ const Register = () => {
     // Create User
     createUser(email, password)
       .then((result) => {
+        const user = result.user;
         navigate(`${location.state ? location.state : '/'}`)
         Swal.fire({
           icon: "success",
@@ -57,8 +58,12 @@ const Register = () => {
         });
         // Update user Profile
         updateUserProfile(updateUserInfo)
-          .then(() => {})
-          .catch(() => {});
+          .then(() => {
+            setUser({...user, displayName: name, photoURL: photo,});
+          })
+          .catch(() => {
+            setUser(user)
+          });
       })
       .catch((error) => {
         toast.error(error.message)

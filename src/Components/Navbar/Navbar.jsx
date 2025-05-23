@@ -69,7 +69,7 @@ const Navbar = () => {
                                 <div className="avatar">
                                 <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
                                     <img 
-                                    className='cursor-pointer' src= {user ? user.photoURL : '' } referrerPolicy="no-referrer" />
+                                    className='cursor-pointer' src= {user && user.email ? user.photoURL : '' } referrerPolicy="no-referrer" />
                                 </div>
                                 </div>
                             </div>

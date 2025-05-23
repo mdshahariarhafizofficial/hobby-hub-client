@@ -1,9 +1,9 @@
 
 .swiper {
   width: 100%;
-  height: 500px;
+  height: 550px;
   border-radius: 15px 15px 10px 10px;
-  margin: 24px 0;
+  margin: px 0;
 }
 .swiper-button-prev, .swiper-button-next{
   color: #ff5722;

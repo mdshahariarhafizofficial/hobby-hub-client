@@ -22,7 +22,9 @@ const FeaturedGroups = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-10 mb-20'>
                 {
-                    featuredGroups.slice(0, 6).sort((a,b)=> new Date(a.date) - new Date(b.date) )
+                    featuredGroups
+                    .sort((a,b)=> new Date(a.date) - new Date(b.date) )
+                    .slice(0, 6)
                     .map(group => 
                     <FeaturedCard
                         key={group._id}

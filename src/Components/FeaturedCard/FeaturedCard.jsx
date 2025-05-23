@@ -15,7 +15,7 @@ const FeaturedCard = ({group}) => {
 
     return (
         <div className=''>
-            <div className="card md:h-[200px] grid grid-cols-12 shadow-sm bg-base-100">
+            <div className="card md:h-[200px] grid grid-cols-12 shadow-sm bg-base-100 dark:bg-[#4d3965]">
             <figure className='col-span-12 md:col-span-6 lg:col-span-6 relative md:h-[150px] lg:h-auto'>
                 <img
                 className='w-full h-full rounded-lg'
@@ -23,7 +23,7 @@ const FeaturedCard = ({group}) => {
                 <div className='absolute bg-primary text-white font-semibold px-3 rounded top-1 right-1 capitalize'>{category}</div>
             </figure>
             <div className="card-body grow-1 p-4 col-span-12 md:col-span-6 lg:col-span-6">
-                <h2 className="card-title text-secondary text-2xl">{groupName}</h2>
+                <h2 className="card-title text-secondary text-2xl dark:text-[#ff946a]">{groupName}</h2>
                 <div className='flex'>
                     <p className='flex items-center gap-2 text-secondary font-bold'> 
                     <MdDateRange size={25} color='#FF5722'></MdDateRange>
@@ -36,7 +36,7 @@ const FeaturedCard = ({group}) => {
                     // <h4 className='bg-green-500 text-secondary w-20 text-center font-bold text-sm rounded flex items-center justify-center'>Upcoming</h4>
                     }
                 </div>
-                <p className='flex items-center gap-2 text-gray-500 font-medium'>
+                <p className='flex items-center gap-2 text-gray-500 dark:text-white font-medium'>
                     {
                         category == "video-gaming" ?
                          <FiMonitor size={25} color='#FF5722' />:

@@ -14,7 +14,7 @@ const FeaturedGroups = () => {
     return (
         <div id='featured-groups' className='my-10'>
             <div className='flex items-center justify-between border-b-2 pb-3 border-gray-300'>
-                <h2 className='text-3xl md:text-5xl text-secondary font-bold'>Featured Groups</h2>
+                <h2 className='text-3xl md:text-5xl text-secondary font-bold dark:text-[#ff946a]'>Featured Groups</h2>
                 <div>
                     <Link to='/all-groups' className='text-primary font-bold flex items-center gap-1'>
                         See All Groups

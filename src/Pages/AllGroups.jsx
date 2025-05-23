@@ -4,7 +4,6 @@ import GroupCard from '../Components/GroupCard/GroupCard';
 
 const AllGroups = () => {
     const data = useLoaderData();
-    console.log(data);
     
     return (
         <div>

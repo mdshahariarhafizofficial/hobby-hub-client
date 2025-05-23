@@ -13,7 +13,6 @@ const CreateGroup = () => {
         const form = e.target;
         const formData = new FormData(form);
         const newGroup = Object.fromEntries(formData.entries());
-        console.log(newGroup);
 
         // send data to DB
         fetch('https://hobby-hub-server-beta.vercel.app/groups', {

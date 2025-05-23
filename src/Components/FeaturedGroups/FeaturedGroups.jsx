@@ -7,10 +7,7 @@ import FeaturedCard from '../FeaturedCard/FeaturedCard';
 const FeaturedGroups = () => {
     const data = useLoaderData();
     const featuredGroups = data.filter(group => new Date(group.date) >= new Date());
-    // console.log(data);
-    console.log(featuredGroups.slice(0, 6));
-    
-    
+        
     return (
         <div id='featured-groups' className='my-10'>
             <div className='flex items-center justify-between border-b-2 pb-3 border-gray-300'>

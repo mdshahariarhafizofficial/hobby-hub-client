@@ -6,11 +6,10 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser, updateUserProfile, user, singInWithGoogle, setUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile, singInWithGoogle, setUser } = useContext(AuthContext);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(user);
 
   // Handle Register
   const handleRegister = (e) => {
@@ -24,7 +23,6 @@ const Register = () => {
       displayName: name,
       photoURL: photo,
     };
-    console.log({ name, photo, email, password });
 
     // Password Validation
     const lowercase = /(?=.*[a-z])/;
@@ -50,7 +48,6 @@ const Register = () => {
     // Create User
     createUser(email, password)
       .then((result) => {
-        console.log(result);
         navigate(`${location.state ? location.state : '/'}`)
         Swal.fire({
           icon: "success",
@@ -82,7 +79,6 @@ const Register = () => {
                       });
                })
                .catch((error) => {
-                  console.log(error);
                   
                       Swal.fire({
                       icon: "error",

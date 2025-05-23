@@ -55,7 +55,6 @@ const MyGroups = () => {
     // Get Single Group Data 
     const handleUpdateData = (id) => {
         const remainingGroups = data.find(group => group._id === id );
-        console.log(remainingGroups);
         setSingleGroup(remainingGroups) 
     }
 
@@ -65,7 +64,6 @@ const MyGroups = () => {
         const form = e.target;
         const formData = new FormData(form);
         const updateData = Object.fromEntries(formData.entries());
-        // console.log(updateData);
         
         // Send Data to Db
         fetch(`https://hobby-hub-server-beta.vercel.app/groups/${singleGroup._id}`,{

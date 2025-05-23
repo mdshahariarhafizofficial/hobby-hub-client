@@ -14,11 +14,9 @@ const GroupDetails = () => {
     const data = useLoaderData();
     const [join, setJoin] = useState(false);
     const { category, date, description, email, groupName, imageUrl, maxMembers, meetingLocation, userName} = data;
-    console.log(data);
 
     const formattedDate = format(new Date(date), 'EEE, MMM d, yyyy')
     const isExpired = new Date(date) < new Date();
-    console.log(isExpired);
 
     if (join) {
         Swal.fire({

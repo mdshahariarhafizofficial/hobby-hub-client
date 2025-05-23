@@ -7,8 +7,6 @@ import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
     const {user, handleSingOut} = useContext(AuthContext);
-    console.log(user);
-
     
     const menu = <>
             <li><NavLink to='/' 

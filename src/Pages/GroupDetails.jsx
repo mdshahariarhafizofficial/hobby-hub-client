@@ -38,7 +38,7 @@ const GroupDetails = () => {
                 {formattedDate}</p>
 
                 <div className='my-6 flex flex-col md:flex-row items-start justify-between gap-6'>
-                    <h2 className='text-5xl font-bold text-secondary'>
+                    <h2 className='text-5xl dark:text-[#ff946a] font-bold text-secondary'>
                     {groupName}</h2>
 
                     {
@@ -70,7 +70,7 @@ const GroupDetails = () => {
                 {/* Category */}
                 <p className='flex items-center gap-2 text-gray-500 font-medium'>
                          <BiSolidCategory size={25} color='#FF5722'> </BiSolidCategory>
-                    <span className='text-xl font-bold text-secondary'>Category : </span>
+                    <span className='dark:text-white text-xl font-bold text-secondary'>Category : </span>
                 {category}</p>
 
                 {/* Location */}
@@ -80,40 +80,40 @@ const GroupDetails = () => {
                          <FiMonitor size={25} color='#FF5722' />:
                         <FaMapLocationDot size={25} color='#FF5722'></FaMapLocationDot>
                     } 
-                    <span className='text-xl font-bold text-secondary'>Location : </span>
+                    <span className='dark:text-white text-xl font-bold text-secondary'>Location : </span>
                 {meetingLocation}</p>
 
                 {/* Member */}
                 <p className='flex items-center gap-2 text-gray-500 font-medium'>
                          <HiUserGroup size={25} color='#FF5722'> </HiUserGroup>
-                    <span className='text-xl font-bold text-secondary'>Max Member : </span>
+                    <span className='dark:text-white text-xl font-bold text-secondary'>Max Member : </span>
                 {maxMembers}</p>
 
                 {/* Start Date */}
                 <p className='flex items-center gap-2 text-gray-500 font-medium'>
                          <MdDateRange size={25} color='#FF5722'> </MdDateRange>
-                    <span className='text-xl font-bold text-secondary'>Start Date : </span>
+                    <span className='dark:text-white text-xl font-bold text-secondary'>Start Date : </span>
                 {formattedDate}</p>
 
                 <div className='py-5 mt-4 border-y-2 border-primary space-y-4'>
-                    <h2 className='text-4xl font-bold text-secondary'>Organizer Info</h2>
+                    <h2 className='dark:text-[#ff946a] text-4xl font-bold text-secondary'>Organizer Info</h2>
 
                     {/* Name */}
                     <p className='flex items-center gap-2 text-gray-500 font-medium'>
                             <FaUserTie size={25} color='#FF5722'> </FaUserTie>
-                        <span className='text-xl font-bold text-secondary'>Organized by : </span>
+                        <span className='dark:text-white text-xl font-bold text-secondary'>Organized by : </span>
                     {userName}</p>
 
                     
                     {/* Email */}
                     <p className='flex items-center gap-2 text-gray-500 font-medium'>
                             <MdDateRange size={25} color='#FF5722'> </MdDateRange>
-                        <span className='text-xl font-bold text-secondary'>Email : </span>
+                        <span className='dark:text-white text-xl font-bold text-secondary'>Email : </span>
                     {email}</p>
                 </div>
                 
                 <div className='mt-6'>
-                    <h2 className='text-5xl border-b-2 border-secondary pb-4 mb-4 font-bold text-secondary'>Description</h2>
+                    <h2 className='dark:text-[#ff946a] text-5xl border-b-2 border-secondary pb-4 mb-4 font-bold text-secondary'>Description</h2>
                     <p className='text-gray-500 font-medium'>{description}</p>
                 </div>
 

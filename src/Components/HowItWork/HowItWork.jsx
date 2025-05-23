@@ -8,7 +8,7 @@ const HowItWork = () => {
         <div className='my-20'>
 
             <div className='flex items-center justify-between border-b-2 pb-3 border-gray-300'>
-                <h2 className='text-3xl md:text-5xl text-secondary font-bold'>How It Works</h2>
+                <h2 className='dark:text-[#ff946a] text-3xl md:text-5xl text-secondary font-bold'>How It Works</h2>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 my-10'>

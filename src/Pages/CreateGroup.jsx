@@ -48,18 +48,18 @@ const CreateGroup = () => {
 
             <div className='grid grid-cols-12 mb-20 mt-10 gap-7'>
                 <div className='col-span-12 md:col-span-5 space-y-5'>
-                    <h2 className='text-5xl font-bold text-secondary'>Turn Your Hobby Into a Gateway to Friendship.</h2>
+                    <h2 className='dark:text-[#ff946a] text-5xl font-bold text-secondary'>Turn Your Hobby Into a Gateway to Friendship.</h2>
                     <p className='text-gray-500 font-medium'>
                         Everyone needs time for themselves — but imagine spending that time with people who love the same things you do. Whether it's painting, reading, hiking, or cooking, shared hobbies lead to real connections.
                     </p>
-                    <ul className='space-y-2'>
+                    <ul className='space-y-2 dark:text-white'>
                         <h2 className='text-3xl font-bold text-secondary'>HobbyHub makes that possible.</h2>
                         <li className='flex items-center gap-1 font-semibold'> <TiArrowForward color='#ff5722' size={30}></TiArrowForward> Connect with people in your local area</li>
                         <li className='flex items-center gap-1 font-semibold'> <TiArrowForward color='#ff5722' size={30}></TiArrowForward>Join or start a group that shares your passion</li>
                         <li className='flex items-center gap-1 font-semibold'> <TiArrowForward color='#ff5722' size={30}></TiArrowForward>Attend meetups, have fun, and grow together</li>
                     </ul>
 
-                    <h4 className='text-2xl font-bold text-secondary'>
+                    <h4 className='dark:text-[#ff946a] text-2xl font-bold text-secondary'>
                         Fill out the form and take the first step toward connection. Let’s make your free time meaningful!
                     </h4>
                 </div>

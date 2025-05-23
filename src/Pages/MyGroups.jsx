@@ -94,7 +94,7 @@ const MyGroups = () => {
     return (
         <div>
             <div className='my-10'>
-                <h2 className='text-5xl font-bold text-center text-secondary'>My Groups</h2>
+                <h2 className='text-5xl dark:text-[#ff946a] font-bold text-center text-secondary'>My Groups</h2>
                 <div className="divider divider-primary w-52 mx-auto"></div>
             </div>
 

@@ -59,7 +59,6 @@ const Navbar = () => {
                     {
                         user? 
                         <div className='flex items-center gap-4'>
-                            <h2>{user?.email}</h2>
 
                             <div className="tooltip tooltip-bottom" data-tip={user && user.displayName}>
                                 <div className="avatar">
@@ -74,11 +73,11 @@ const Navbar = () => {
                         :
                         <div className='flex items-center gap-4'>
                             <Link to='login'>
-                                <button className="btn btn-primary text-white text-xl font-medium px-6 tracking-wider">Login</button>
+                                <button className="btn btn-primary dark:bg-[#ff946a] text-white text-xl font-medium px-6 tracking-wider">Login</button>
                             </Link>
-                                <span className='font-bold hidden md:block'>Or</span>
+                                <span className='font-bold hidden md:block dark:text-primary'>Or</span>
                             <Link to='register' className='hidden md:block'>
-                                <button className="btn btn-outline border-primary border-2 text-xl font-medium tracking-wider">Register</button>
+                                <button className="btn btn-outline dark:text-white border-primary border-2 text-xl font-medium tracking-wider">Register</button>
                             </Link>
                         </div>
                     }

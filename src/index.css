@@ -3,6 +3,17 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* Dark Mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Smooth color transition for dark mode */
+html {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 @plugin "daisyui/theme" {
   name: "light";
   default: true;

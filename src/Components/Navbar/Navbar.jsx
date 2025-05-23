@@ -35,7 +35,7 @@ const Navbar = () => {
             <div className="navbar px-0 py-3 border-b-2 border-gray-200">
                 <div className="navbar-start">
                     <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost pl-0 lg:hidden">
+                    <div tabIndex={0} role="button" className="btn dark:bg-[#ff946a] btn-ghost pl-0 lg:hidden items-center mr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                     </div>
                     <ul
@@ -49,7 +49,7 @@ const Navbar = () => {
                     <Link to='/'><img className='max-w-40 h-16 object-cover' src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-base font-medium space-x-4 text-secondary">
+                    <ul className="menu menu-horizontal px-1 text-base font-medium space-x-4 text-secondary dark:text-[#ff946a]">
                         {
                             menu
                         }
@@ -69,7 +69,7 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            <button onClick={()=>handleSingOut()} className="btn btn-primary text-white text-xl font-medium px-6 tracking-wider">Log Out</button>
+                            <button onClick={()=>handleSingOut()} className="btn dark:bg-[#ff946a] btn-primary text-white text-xl font-medium px-6 tracking-wider">Log Out</button>
                         </div>
                         :
                         <div className='flex items-center gap-4'>

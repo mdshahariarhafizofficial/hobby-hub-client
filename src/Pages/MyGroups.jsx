@@ -78,6 +78,12 @@ const MyGroups = () => {
         .then(res => res.json())
         .then(data => {
             if (data.modifiedCount) {
+                fetch(`https://hobby-hub-server-beta.vercel.app/groups/${singleGroup._id}`)
+                .then(res => res.json())
+                .then(data => {
+                    const updatedGroup = myGroups.map(group => group._id === data._id ? data : group);
+                    setMyGroups(updatedGroup)                    
+                })
                 document.getElementById('my_modal_5').close();
                 Swal.fire({
                 icon: "success",

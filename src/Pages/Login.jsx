@@ -90,11 +90,11 @@ const Login = () => {
                 className="space-y-6">
                     <div className="space-y-1 text-sm" bis_skin_checked="1">
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300" />
+                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300" required />
                     </div>
                     <div className="space-y-1 text-sm" bis_skin_checked="1">
                         <label htmlFor="password" className="block dark:text-gray-700">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300" />
+                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300" required />
                         <div className="flex justify-between text-xs dark:text-gray-600" bis_skin_checked="1">
                             <p className='text-red-600'>{errorMessage}</p>
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>

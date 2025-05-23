@@ -115,6 +115,7 @@ const Register = () => {
               name="name"
               id="name"
               placeholder="Name"
+              required
               className="w-full px-4 py-3 rounded-md dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300"
             />
           </div>
@@ -127,6 +128,7 @@ const Register = () => {
               type="text"
               name="photo"
               id="photo"
+              required
               placeholder="Photo Url"
               className="w-full px-4 py-3 rounded-md dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300"
             />
@@ -140,6 +142,7 @@ const Register = () => {
               type="email"
               name="email"
               id="email"
+              required
               placeholder="Email"
               className="w-full px-4 py-3 rounded-md dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300"
             />
@@ -153,6 +156,7 @@ const Register = () => {
               type="password"
               name="password"
               id="password"
+              required
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600 border-2 border-gray-300"
             />

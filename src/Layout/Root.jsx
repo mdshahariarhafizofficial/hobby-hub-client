@@ -35,7 +35,7 @@ const Root = () => {
 
     return (
         <>
-            <header>
+            <header className='sticky top-0 bg-white z-50'>
                 <div className='max-w-[1280px] mx-auto px-5 lg:px-0'>
                     <Navbar></Navbar>
                 </div>

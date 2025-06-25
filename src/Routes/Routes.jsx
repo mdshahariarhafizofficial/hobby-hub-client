@@ -10,6 +10,9 @@ import MyGroups from "../Pages/MyGroups";
 import Loader from "../Pages/Loader";
 import GroupDetails from "../Pages/GroupDetails";
 import ErrorPage from "../Pages/ErrorPage";
+import DashboardLayout from "../Pages/Dashboard/DashboardLayout";
+import Overview from "../Components/Overview";
+import AllItems from "../Components/AlllItems";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +54,14 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><GroupDetails></GroupDetails></PrivateRoute>,
                 hydrateFallbackElement: <Loader></Loader>
             }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
+            { index: true, element: <Overview></Overview> },
+            { path: 'all-items', element: <AllItems></AllItems> }
         ]
     },
     {

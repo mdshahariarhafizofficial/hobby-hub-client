@@ -15,6 +15,7 @@ import Overview from "../Components/Overview";
 import DashboardAllGroups from "../Pages/Dashboard/DashboardAllGroups";
 import DashboardMyGroups from "../Pages/Dashboard/DashboardMyGroups";
 import DashboardAddGroup from "../Pages/Dashboard/DashboardAddGroup";
+import Category from "../Pages/Category";
 
 const router = createBrowserRouter([
     {
@@ -55,6 +56,12 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://hobby-hub-server-beta.vercel.app/groups/${params.id}`),
                 element: <PrivateRoute><GroupDetails></GroupDetails></PrivateRoute>,
                 hydrateFallbackElement: <Loader></Loader>
+            },
+            {
+                path: '/category/:category',
+                loader: () => fetch('https://hobby-hub-server-beta.vercel.app/groups'),
+                Component: Category,
+                hydrateFallbackElement: <Loader></Loader> 
             }
         ]
     },

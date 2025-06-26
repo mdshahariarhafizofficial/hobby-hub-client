@@ -43,7 +43,7 @@ const Root = () => {
             <main className='relative'>
 
             {/* Dark Mode Controller */}
-                <label onClick={()=>setDarkMode(!darkMode)} className="w-32 px-5 py-2 rounded-2xl left-[95%] top-[10%] z-50 sticky flex items-center cursor-pointer gap-2 bg-gray-200">
+                <label onClick={()=>setDarkMode(!darkMode)} className="w-32 px-5 py-2 rounded-2xl left-[95%] top-[10%] z-50 sticky lg:flex items-center cursor-pointer gap-2 bg-gray-200 hidden">
                 
                 {/* Sun */}
                 <svg

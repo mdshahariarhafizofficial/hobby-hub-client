@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import logo from '../assets/HobbyHubLogo.png';
+import { Link } from "react-router";
 const Sidebar = () => {
     const linkClass = ({ isActive }) =>
     `flex items-center gap-3 px-4 py-2 rounded-lg transition duration-200 ${
@@ -9,7 +10,9 @@ const Sidebar = () => {
     }`;
   return (
     <div className="w-64 bg-base-100 p-5 shadow-md">
-      <img className="w-30 mb-6" src={logo} alt="" />
+      <Link to='/'>
+      <img className="w-30 mb-6 mt-5" src={logo} alt="" />
+      </Link>
       {/* <h2 className="text-2xl font-bold mb-6">Dashboard</h2> */}
       <ul className="space-y-2">
         <li>

@@ -4,6 +4,8 @@ import logo from '../../assets/HobbyHubLogo.png'
 import { AuthContext } from '../../Context/AuthContext';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
+import { FaRegUserCircle } from 'react-icons/fa';
+import { MdOutlineDashboard } from 'react-icons/md';
 
 const Navbar = () => {
     const {user, handleSingOut} = useContext(AuthContext);
@@ -55,7 +57,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end space-x-4">
+                {/* <div className="navbar-end space-x-4">
                     <Tooltip id='my-tooltip'></Tooltip>
                     {
                         user? 
@@ -88,7 +90,60 @@ const Navbar = () => {
                         </div>
                     }
 
-                </div>
+                </div> */}
+                <div className="navbar-end space-x-4">
+                    <Tooltip id='my-tooltip'></Tooltip>
+                    {
+                        user ? (
+                        <div className='flex items-center gap-4'>
+                            <h2>{user?.email}</h2>
+                            {/* Profile Dropdown with Dashboard Link */}
+                            <div className="dropdown dropdown-end">
+                            <div
+                                tabIndex={0}
+                                data-tooltip-id="my-tooltip"
+                                data-tooltip-content={`${user && user.displayName}`}
+                                data-tooltip-place="bottom"
+                                role="button"
+                                className="avatar"
+                            >
+                                <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
+                                <img
+                                    className='cursor-pointer'
+                                    src={user?.photoURL || ''}
+                                    referrerPolicy="no-referrer"
+                                    alt="user"
+                                />
+                                </div>
+                            </div>
+                            <ul tabIndex={0} className="mt-3 z-[1] p-3 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 space-y-3">
+                                <li>
+                                <span className="font-semibold text-secondary"><FaRegUserCircle size={20} /> {user?.displayName}</span>
+                                </li>
+                                <li>
+                                <Link to="/dashboard"><MdOutlineDashboard size={20} /> Dashboard</Link>
+                                </li>
+                                <li>
+                                <button onClick={() => handleSingOut()} className="btn btn-sm bg-red-500 text-white mt-1">Log Out</button>
+                                </li>
+                            </ul>
+                            </div>
+
+                        </div>
+                        ) : (
+                        <div className='flex items-center gap-4'>
+                            <Link to='login'>
+                            <button className="btn btn-primary dark:bg-[#ff946a] text-white text-xl font-medium px-6 tracking-wider">Login</button>
+                            </Link>
+                            <span className='font-bold hidden md:block dark:text-primary'>Or</span>
+                            <Link to='register' className='hidden md:block'>
+                            <button className="btn btn-outline dark:text-white border-primary border-2 text-xl font-medium tracking-wider">Register</button>
+                            </Link>
+                        </div>
+                        )
+                    }
+                    </div>
+
             </div>
         </nav>
     );

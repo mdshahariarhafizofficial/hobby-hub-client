@@ -22,7 +22,7 @@ const Sidebar = () => {
           <NavLink to="/dashboard/all-groups" className={linkClass}>All Groups</NavLink>
         </li>
         <li>
-          <NavLink to="/dashboard/create-group" className={linkClass}>Add Group</NavLink>
+          <NavLink to="/dashboard/add-group" className={linkClass}>Add Group</NavLink>
         </li>
         <li>
           <NavLink to="/dashboard/my-groups" className={linkClass}>My Groups</NavLink>

@@ -14,6 +14,7 @@ import DashboardLayout from "../Pages/Dashboard/DashboardLayout";
 import Overview from "../Components/Overview";
 import DashboardAllGroups from "../Pages/Dashboard/DashboardAllGroups";
 import DashboardMyGroups from "../Pages/Dashboard/DashboardMyGroups";
+import DashboardAddGroup from "../Pages/Dashboard/DashboardAddGroup";
 
 const router = createBrowserRouter([
     {
@@ -69,8 +70,8 @@ const router = createBrowserRouter([
                 hydrateFallbackElement: <Loader></Loader>
             },
             {
-                path: 'create-group',
-                element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
+                path: 'add-group',
+                element: <PrivateRoute><DashboardAddGroup></DashboardAddGroup></PrivateRoute>
             },
             {
                 path: 'my-groups',

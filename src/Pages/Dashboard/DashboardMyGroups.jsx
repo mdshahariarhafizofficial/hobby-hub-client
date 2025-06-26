@@ -12,7 +12,6 @@ const DashboardMyGroups = () => {
     const data = useLoaderData();
     const [myGroups, setMyGroups] = useState(data);
     const [singleGroup, setSingleGroup] = useState(myGroups);
-    
 
     useEffect(()=>{
         const remainingGroups = data.filter(group => group.email === user.email );

@@ -62,8 +62,13 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
-            { index: true, element: <Overview></Overview> }
-            ,{
+            { 
+                index: true, 
+                element: <Overview></Overview> ,
+                loader: () => fetch('https://hobby-hub-server-beta.vercel.app/groups'),
+                hydrateFallbackElement: <Loader></Loader>
+            },
+            {
                 path: 'all-groups',
                 loader: () => fetch('https://hobby-hub-server-beta.vercel.app/groups'),
                 Component: DashboardAllGroups,

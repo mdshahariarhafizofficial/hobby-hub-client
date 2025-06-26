@@ -6,6 +6,7 @@ import { MdOutlineGroups2 } from "react-icons/md";
 import { FaLayerGroup } from "react-icons/fa6";
 import { LuClockAlert } from "react-icons/lu";
 import { FaCheckCircle } from "react-icons/fa";
+import CategorySection from "./CategorySection/CategorySection";
 
 const Overview = () => {
   const {user} = useContext(AuthContext);
@@ -60,6 +61,9 @@ const Overview = () => {
           icon={<FaCheckCircle size={60} color="black" />}
         />
 
+      </div>
+      <div className="my-10">
+        <CategorySection></CategorySection>
       </div>
       <div className="bg-white shadow p-5 rounded-lg">
         <h2 className="text-xl font-semibold text-secondary">Logged-in User Info</h2>

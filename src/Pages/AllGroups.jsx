@@ -5,17 +5,21 @@ import GroupCard from "../Components/GroupCard/GroupCard";
 const AllGroups = () => {
   const data = useLoaderData();
   const [groups, setGroups] = useState(data);
+  const normalizeCategory = (str) => str.toLowerCase().replace(/[\s&]+/g, '-');
   const [sortOrder, setSortOrder] = useState('descending');
 // Category Filter
 const categoryFilter = (e) => {
-    const category = e.target.value;
-    console.log(category);
-    const filterGroups = data.filter(group => group.category === category);
-    setGroups(filterGroups);
-    if (category === '') {
-        setGroups(data)
+    const selectedCategory = e.target.value;
+    if (selectedCategory === '') {
+        setGroups(data);
+    } else {
+        const filterGroups = data.filter(group => 
+            normalizeCategory(group.category) === selectedCategory
+        );
+        setGroups(filterGroups);
     }
-}
+};
+
 // Status Filter
 const statusFilter = (e) => {
     const category = e.target.value;

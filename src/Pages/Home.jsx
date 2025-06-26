@@ -12,8 +12,12 @@ const Home = () => {
             <Slider></Slider>
             <CategorySection></CategorySection>
             <FeaturedGroups></FeaturedGroups>
+            <div className='py-10'>
             <AboutUs></AboutUs>
-            <HowItWork></HowItWork>
+            </div>
+            <div className='pb-5'>               
+                <HowItWork></HowItWork>
+            </div>
             <CantFind></CantFind>
         </div>
     );

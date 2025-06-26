@@ -13,6 +13,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import DashboardLayout from "../Pages/Dashboard/DashboardLayout";
 import Overview from "../Components/Overview";
 import DashboardAllGroups from "../Pages/Dashboard/DashboardAllGroups";
+import DashboardMyGroups from "../Pages/Dashboard/DashboardMyGroups";
 
 const router = createBrowserRouter([
     {
@@ -74,7 +75,7 @@ const router = createBrowserRouter([
             {
                 path: 'my-groups',
                 loader: () => fetch('https://hobby-hub-server-beta.vercel.app/groups'),
-                element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>,
+                element: <PrivateRoute><DashboardMyGroups></DashboardMyGroups></PrivateRoute>,
                 hydrateFallbackElement: <Loader></Loader>
             },
         ]

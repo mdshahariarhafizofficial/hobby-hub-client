@@ -43,12 +43,12 @@ const Root = () => {
             <main className='relative'>
 
             {/* Dark Mode Controller */}
-                <label onClick={()=>setDarkMode(!darkMode)} className="w-32 px-5 py-2 rounded-2xl left-[95%] top-[10%] z-50 sticky lg:flex items-center cursor-pointer gap-2 bg-gray-200 hidden">
+                <label onClick={()=>setDarkMode(!darkMode)} className="w-25 px-2 py-1 rounded-2xl left-[95%] top-[10%] z-50 sticky lg:flex items-center cursor-pointer gap-2 bg-gray-200 hidden">
                 
                 {/* Sun */}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
+                    width="20"
                     height="20"
                     viewBox="0 0 24 24"
                     fill="none"
@@ -66,7 +66,7 @@ const Root = () => {
                 {/* Moon */}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
+                    width="20"
                     height="20"
                     viewBox="0 0 24 24"
                     fill="none"

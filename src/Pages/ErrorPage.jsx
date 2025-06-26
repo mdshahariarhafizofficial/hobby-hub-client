@@ -10,9 +10,9 @@ const ErrorPage = () => {
         <div className="flex flex-col items-center justify-center px-5 mx-auto my-8" bis_skin_checked="1">
             <div className="text-center" bis_skin_checked="1">
                 <IoIosWarning size={200} color='#ff5722' className='mx-auto' />
-                <h2 className="mb-8 font-extrabold text-9xl text-primary">
+                <p className="mb-8 font-extrabold text-9xl text-primary">
                     <span className="sr-only">Error</span>404
-                </h2>
+                </p>
                 <h4 className="mb-8 font-extrabold text-4xl text-primary">
                     {location.pathname}
                 </h4>

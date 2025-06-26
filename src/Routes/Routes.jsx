@@ -12,7 +12,7 @@ import GroupDetails from "../Pages/GroupDetails";
 import ErrorPage from "../Pages/ErrorPage";
 import DashboardLayout from "../Pages/Dashboard/DashboardLayout";
 import Overview from "../Components/Overview";
-import AllItems from "../Components/AlllItems";
+import DashboardAllGroups from "../Pages/Dashboard/DashboardAllGroups";
 
 const router = createBrowserRouter([
     {
@@ -60,8 +60,23 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
-            { index: true, element: <Overview></Overview> },
-            { path: 'all-items', element: <AllItems></AllItems> }
+            { index: true, element: <Overview></Overview> }
+            ,{
+                path: 'all-groups',
+                loader: () => fetch('https://hobby-hub-server-beta.vercel.app/groups'),
+                Component: DashboardAllGroups,
+                hydrateFallbackElement: <Loader></Loader>
+            },
+            {
+                path: 'create-group',
+                element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
+            },
+            {
+                path: 'my-groups',
+                loader: () => fetch('https://hobby-hub-server-beta.vercel.app/groups'),
+                element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>,
+                hydrateFallbackElement: <Loader></Loader>
+            },
         ]
     },
     {

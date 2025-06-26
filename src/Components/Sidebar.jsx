@@ -11,7 +11,7 @@ const Sidebar = () => {
   return (
     <div className="w-64 bg-base-100 p-5 shadow-md">
       <Link to='/'>
-      <img className="w-30 mb-6 mt-5" src={logo} alt="" />
+      <img className="w-30 mb-6 mt-4" src={logo} alt="" />
       </Link>
       {/* <h2 className="text-2xl font-bold mb-6">Dashboard</h2> */}
       <ul className="space-y-2">
@@ -19,13 +19,13 @@ const Sidebar = () => {
           <NavLink to="/dashboard" end className={linkClass}>Overview</NavLink>
         </li>
         <li>
-          <NavLink to="/dashboard/all-items" className={linkClass}>All Items</NavLink>
+          <NavLink to="/dashboard/all-groups" className={linkClass}>All Groups</NavLink>
         </li>
         <li>
-          <NavLink to="/dashboard/add-item" className={linkClass}>Add Item</NavLink>
+          <NavLink to="/dashboard/create-group" className={linkClass}>Add Group</NavLink>
         </li>
         <li>
-          <NavLink to="/dashboard/my-items" className={linkClass}>My Items</NavLink>
+          <NavLink to="/dashboard/my-groups" className={linkClass}>My Groups</NavLink>
         </li>
       </ul>
     </div>

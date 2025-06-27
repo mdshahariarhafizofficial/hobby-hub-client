@@ -16,6 +16,9 @@ import DashboardAllGroups from "../Pages/Dashboard/DashboardAllGroups";
 import DashboardMyGroups from "../Pages/Dashboard/DashboardMyGroups";
 import DashboardAddGroup from "../Pages/Dashboard/DashboardAddGroup";
 import Category from "../Pages/Category";
+import TermsOfUse from "../Pages/TermsOfUse";
+import PrivacyPolicy from "../Pages/PrivacyPolicy";
+import CookiePolicy from "../Pages/CookiePolicy";
 
 const router = createBrowserRouter([
     {
@@ -62,6 +65,18 @@ const router = createBrowserRouter([
                 loader: () => fetch('https://hobby-hub-server-beta.vercel.app/groups'),
                 Component: Category,
                 hydrateFallbackElement: <Loader></Loader> 
+            },
+            {
+                path: 'terms-of-use',
+                Component: TermsOfUse,
+            },
+            {
+                path: 'privacy-policy',
+                Component: PrivacyPolicy,
+            },
+            {
+                path: 'cookie-policy',
+                Component: CookiePolicy,
             }
         ]
     },

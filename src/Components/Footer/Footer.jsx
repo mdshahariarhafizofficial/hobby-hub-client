@@ -43,9 +43,9 @@ const Footer = () => {
         <nav>
         <h6 className="text-2xl dark:text-[#ff946a] tracking-wider text-primary font-bold">Legal</h6>
             <div className='flex flex-col gap-4 dark:text-white'>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
+                <a href='terms-of-use' target='_blank' className="link link-hover">Terms of use</a>
+                <a href='privacy-policy' target='_blank' className="link link-hover">Privacy policy</a>
+                <a href='cookie-policy' target='_blank' className="link link-hover">Cookie policy</a>
             </div>
         </nav>
         <nav>

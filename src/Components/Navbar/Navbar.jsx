@@ -18,6 +18,22 @@ const Navbar = () => {
             className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
             >All Groups</NavLink></li>
 
+            <li><NavLink to='about-us' 
+            className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
+            >About Us</NavLink></li>
+            {
+                !user && 
+                <>
+                    <li><NavLink to='terms-of-use' 
+                    className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
+                    >Terms of Use</NavLink></li>
+
+                    <li><NavLink to='privacy-policy' 
+                    className={ ({isActive}) => isActive? 'text-primary border-b-2 rounded-none font-bold': '' }
+                    >Privacy Policy</NavLink></li>
+                </>
+            }
+
             {
                user ? 
                <>

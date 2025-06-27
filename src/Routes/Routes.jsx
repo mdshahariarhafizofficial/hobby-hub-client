@@ -19,6 +19,7 @@ import Category from "../Pages/Category";
 import TermsOfUse from "../Pages/TermsOfUse";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
 import CookiePolicy from "../Pages/CookiePolicy";
+import AboutUs from "../Pages/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
                 loader: () => fetch('https://hobby-hub-server-beta.vercel.app/groups'),
                 Component: Category,
                 hydrateFallbackElement: <Loader></Loader> 
+            },
+            {
+                path: 'about-us',
+                Component: AboutUs
             },
             {
                 path: 'terms-of-use',

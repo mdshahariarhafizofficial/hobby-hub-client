@@ -3,7 +3,7 @@ import React from 'react';
 const PrivacyPolicy = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 text-gray-800 dark:text-gray-200">
-      <h1 className="text-4xl font-bold mb-6 text-secondary">Privacy Policy</h1>
+      <h1 className="text-4xl font-bold mb-6 text-secondary dark:text-primary">Privacy Policy</h1>
       <p className="mb-4">
         Your privacy is important to us at <strong>HobbyHub</strong>. This policy outlines how we collect, use, and protect your information.
       </p>

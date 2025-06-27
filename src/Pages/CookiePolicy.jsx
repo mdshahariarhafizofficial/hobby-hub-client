@@ -3,7 +3,7 @@ import React from 'react';
 const CookiePolicy = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 text-gray-800 dark:text-gray-200">
-      <h1 className="text-4xl font-bold mb-6 text-secondary">Cookie Policy</h1>
+      <h1 className="text-4xl font-bold mb-6 text-secondary dark:text-primary">Cookie Policy</h1>
       <p className="mb-4">
         This Cookie Policy explains how <strong>HobbyHub</strong> uses cookies and similar technologies to enhance your browsing experience.
       </p>

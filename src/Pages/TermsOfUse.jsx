@@ -3,7 +3,7 @@ import React from 'react';
 const TermsOfUse = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 text-gray-800 dark:text-gray-200">
-      <h1 className="text-4xl font-bold mb-6 text-secondary">Terms of Use</h1>
+      <h1 className="text-4xl font-bold mb-6 text-secondary dark:text-primary">Terms of Use</h1>
       <p className="mb-4">
         Welcome to <strong>HobbyHub</strong>. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions.
       </p>

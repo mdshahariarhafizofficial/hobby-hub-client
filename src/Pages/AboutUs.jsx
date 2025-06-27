@@ -3,10 +3,10 @@ import { FaUsers, FaLightbulb, FaHandsHelping } from 'react-icons/fa';
 
 const AboutUs = () => {
   return (
-    <div className="px-4 md:px-20 py-16 bg-base-100 text-base-content">
+    <div className="px-4 md:px-20 py-16 text-base-content">
       {/* Heading Section */}
       <div className="text-center mb-12">
-        <h2 className="text-5xl font-bold text-secondary mb-2">About HobbyHub</h2>
+        <h2 className="text-5xl dark:text-white font-bold text-secondary mb-2">About HobbyHub</h2>
         {/* Divider matching text width */}
         <div className="w-60 mx-auto border-b-4 border-primary mb-6"></div>
         <p className="text-lg max-w-2xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -18,24 +18,24 @@ const AboutUs = () => {
 
       {/* Highlights Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
-        <div className="flex flex-col items-center text-center p-6 border rounded-lg shadow-md hover:shadow-xl transition">
-          <FaUsers size={48} className="text-secondary mb-4" />
+        <div className="flex flex-col items-center text-center p-6 border rounded-lg shadow-md hover:shadow-xl dark:shadow-white transition">
+          <FaUsers size={48} className="text-secondary mb-4 dark:text-white" />
           <h4 className="text-xl font-bold mb-2 text-primary">Community Focused</h4>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             Our mission is to build meaningful communities through hobbies. Meet new people, form friendships,
             and build your own hobby family.
           </p>
         </div>
-        <div className="flex flex-col items-center text-center p-6 border rounded-lg shadow-md hover:shadow-xl transition">
-          <FaLightbulb size={48} className="text-secondary mb-4" />
+        <div className="flex flex-col items-center text-center p-6 border rounded-lg shadow-md hover:shadow-xl dark:shadow-white transition">
+          <FaLightbulb size={48} className="text-secondary mb-4 dark:text-white" />
           <h4 className="text-xl font-bold mb-2 text-primary">Inspire Creativity</h4>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             Discover new hobbies, learn from others, and share your own experiences. HobbyHub is a space for creativity
             to thrive.
           </p>
         </div>
-        <div className="flex flex-col items-center text-center p-6 border rounded-lg shadow-md hover:shadow-xl transition">
-          <FaHandsHelping size={48} className="text-secondary mb-4" />
+        <div className="flex flex-col items-center text-center p-6 border rounded-lg shadow-md hover:shadow-xl dark:shadow-white transition">
+          <FaHandsHelping size={48} className="text-secondary mb-4 dark:text-white" />
           <h4 className="text-xl font-bold mb-2 text-primary">Easy Collaboration</h4>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             Easily create or join hobby groups, plan events, and collaborate on shared interests — all within one platform.
@@ -45,7 +45,7 @@ const AboutUs = () => {
 
       {/* Mission Section */}
       <div className="mt-20 max-w-4xl mx-auto text-center">
-        <h3 className="text-3xl font-bold text-secondary mb-2">Our Mission</h3>
+        <h3 className="text-3xl font-bold text-secondary mb-2 dark:text-white">Our Mission</h3>
         <div className="w-48 mx-auto border-b-4 border-primary mb-6"></div>
         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           At HobbyHub, we believe that shared interests bring people closer. Our goal is to eliminate barriers and 

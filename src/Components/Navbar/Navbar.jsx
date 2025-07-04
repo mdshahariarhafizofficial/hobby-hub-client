@@ -112,7 +112,7 @@ const Navbar = () => {
                     {
                         user ? (
                         <div className='flex items-center gap-4'>
-                            <h2>{user?.email}</h2>
+                            <h2 className='hidden md:block'>{user?.email}</h2>
                             {/* Profile Dropdown with Dashboard Link */}
                             <div className="dropdown dropdown-end">
                             <div
